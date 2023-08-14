@@ -1,0 +1,42 @@
+body {
+    background-color: rgba(253, 55, 55, 0.986);
+}
+h1 {                    /*tipo*/
+    color: rgb(0, 255, 0);
+}
+#id {                    /*id*/
+    color: blue;
+}
+.clase {                    /*clase*/
+    color: red;
+}
+a[href="https://www.google.com"] {                    /*atributo*/
+    color: rgb(255, 255, 0);
+}
+.clase::after{content: " esto se agrego con un after"; color: black}       /*pseudo elemento*/
+
+p + p {    
+    color: purple;
+}
+p + p ~ div {
+    color: orange;
+}
+.boton:hover {   
+    color: white;
+}
+@media (max-width: 600px) {
+    .imagen {
+      width: 20vw;
+      position: fixed;
+      right: 2vw;
+      top: 2vh;
+    }
+  }
+@media (min-width: 600px) {
+  .imagen {
+    width: 10vw;
+    position: fixed;
+    right: 2vw;
+    top: 2vh;
+  }
+}
