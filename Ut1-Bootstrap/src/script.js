@@ -117,7 +117,7 @@ function asignarTareafuncion(event){
 function fetchData() {
     fetch(link, { method: "GET" })
       .then((response) => {
-        return response.json(); // extract JSON from response
+        return response.json()
       })
       .then((data) => {
         let counter = 0
