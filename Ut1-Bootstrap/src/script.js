@@ -21,10 +21,9 @@ let cardCount = 1;
 
 let dropdownContent = document.getElementById('dropdownPersonas');
 
-let personasCargadas = false;
-
 let arrayPersonas = [];
 
+fetchData(link)
 
 function handleClickProy() {
     if (confirm('Quieres agregar un nuevo proyecto?')) {
@@ -45,7 +44,7 @@ function handleClickProy() {
         newButton.classList.add('bot');
         newButton.hrefList = '#';
         newButton.id = 'agregarTarea' + cardCount;
-        newButton.textContent = 'Agregar';
+        newButton.textContent = 'Nueva Tarea';
         newButton.style = "width: 95%"
         newTareas.id = 'tareasProy' + cardCount;
         cardCount += 1;
@@ -77,8 +76,6 @@ function handleClickn() {
     alert('No tienes notificaciones nuevas')
 }
 function handleHoverPF() {
-    !personasCargadas ? fetchData(link) : null;
-    personasCargadas = true;
     dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
 }
 function agregarTareafun(event){    
