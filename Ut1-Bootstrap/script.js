@@ -7,12 +7,23 @@ infoBut.addEventListener('click', handleClicki);
 const notifBut = document.getElementById('noti');
 notifBut.addEventListener('click', handleClickn);
 
-const handleMouseoverMas = document.getElementById('mas');
-handleMouseoverMas.addEventListener('mouseover', handleMouseovermas);
+const handleHoverP = document.getElementById('personas');
+handleHoverP.addEventListener('mouseover', handleHoverPF);
+
+const handleHoverP2 = document.getElementById('personas');
+handleHoverP2.addEventListener('mouseout', handleHoverPF);
+
+const link = 'https://jsonplaceholder.typicode.com/users';
 
 let boolProy = true;
 
 let cardCount = 1;
+
+let dropdownContent = document.getElementById('dropdownPersonas');
+
+let personasCargadas = false;
+
+let arrayPersonas = [];
 
 
 function handleClickProy() {
@@ -35,7 +46,7 @@ function handleClickProy() {
         newButton.hrefList = '#';
         newButton.id = 'agregarTarea' + cardCount;
         newButton.textContent = 'Agregar';
-        newButton.style = "width: 95%;"
+        newButton.style = "width: 95%"
         newTareas.id = 'tareasProy' + cardCount;
         cardCount += 1;
 
@@ -65,21 +76,65 @@ function handleClicki() {
 function handleClickn() {
     alert('No tienes notificaciones nuevas')
 }
-function handleMouseovermas() {
-    alert('No implementado aun')
+function handleHoverPF() {
+    !personasCargadas ? fetchData(link) : null;
+    personasCargadas = true;
+    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
 }
 function agregarTareafun(event){    
     const nombreTarea = prompt('Ingresa el nombre de la tarea')
+    const asignarTarea = document.createElement('button')
+    asignarTarea.setAttribute("style", "height: 26px; width: 36px;") 
+    asignarTarea.classList.add('botonTarea');
+    asignarTareafun(asignarTarea);
     let idBien = event.target.id;
     idBien = idBien[idBien.length - 1]
     idBien = 'tareasProy' + idBien;
-    console.log(idBien)
     const contTareas = document.getElementById(idBien);
     const nuevaTarea = document.createElement('p');
     nuevaTarea.classList.add('card-text');
     nuevaTarea.textContent = nombreTarea;
-    contTareas.appendChild(nuevaTarea);
+
+    const contenedor = document.createElement('div');
+    contenedor.style = 'display: flex; flex-direction: row; justify-content: space-between;'
+    contenedor.appendChild(nuevaTarea);
+    contenedor.appendChild(asignarTarea);
+    contTareas.appendChild(contenedor);
 }
 function agregarListener(element){
     element.addEventListener('click', event => agregarTareafun(event))
 };
+function asignarTareafun(element){
+    element.addEventListener('click', event => asignarTareafuncion(event))
+}
+function asignarTareafuncion(event){
+    posibleTexto = prompt('A quien asignar la tarea?')
+    if (arrayPersonas.includes(posibleTexto)){
+            posibleTexto = posibleTexto.split(" ")
+            posibleTexto = posibleTexto[0][0] + posibleTexto[1][0]
+            console.log(posibleTexto);
+            event.target.textContent = posibleTexto
+    }else { alert(`No existe una persona con el nombre ` + posibleTexto)
+    }
+}
+
+function fetchData() {
+    fetch(link, { method: "GET" })
+      .then((response) => {
+        return response.json(); // extract JSON from response
+      })
+      .then((data) => {
+        let counter = 0;
+        data.forEach(element => {
+            arrayPersonas[counter] = element.name
+            counter += 1;
+            let elemento = document.createElement('p');
+            elemento.innerHTML = element.name;
+            elemento.classList.add('dropeable');
+            dropdownContent.appendChild(elemento)
+        });
+      })
+      .catch((error) => {
+        console.log("Error fetching data: ", error);
+      });
+  }
