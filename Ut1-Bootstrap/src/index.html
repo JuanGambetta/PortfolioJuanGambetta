@@ -8,7 +8,7 @@
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <script defer src="./script.js"></script>
     </head>
-    <body style="background-image: url('./d5ae8190f0aa7dfbe0b01f336f29d44094b967b5.webp');">
+    <body style="background-image: url('../imagenes/d5ae8190f0aa7dfbe0b01f336f29d44094b967b5.webp');">
         <div class="container">
             <div class="row header">
                 <div class="col-2">
@@ -16,13 +16,17 @@
                 </div>
                 <div class="col header-icons">
                         <i id="mas" class="bi bi-plus-square-fill icono"></i>
-                        <i class="bi bi-person-lines-fill icono2"></i>
+                        <i id="personas" class="bi bi-person-lines-fill icono2 dropdown">
+                            <div id="dropdownPersonas" class="dropdown-content" >
+                                <!-- slot para personas -->
+                            </div>
+                        </i>
                         <i id="info" class="bi bi-info-square-fill icono3"></i>
                         <i id="noti" class="bi-bell-fill icono4"></i>      
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-8 col-lg-4">
                     <div id="slot1">
                         <!-- slot 1 para proyectos -->
                     </div>
@@ -30,7 +34,7 @@
                 <div class="col-md-1 col-lg-1">
                     <!-- separacion -->
                 </div>
-                <div class="col-md-4 col-lg-4">
+                <div class="d-none d-sm-none d-md-block col-lg-4">
                     <div id="slot2">
                         <!-- slot 2 para proyectos -->
                     </div>
@@ -39,11 +43,8 @@
                 <div class="col-md-1 col-lg-1">
                     <!-- separacion -->
                 </div>
-                <div class="col-md-1 col-lg-2">
+                <div class="col-md-2 col-lg-2">
                     <button id="agregarProyectos" type="button" class="btn btn-primary top">Agregar Proyecto</button>
-                </div>
-                <div class="col-md-1">
-                    <!-- separacion -->
                 </div>
             </div>
         </div>

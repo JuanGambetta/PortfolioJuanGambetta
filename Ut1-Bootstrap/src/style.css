@@ -1,0 +1,43 @@
+.marco{color: purple; min-height: 10%;}
+.header-icons{
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.header{
+    background-color: #0275d8;
+    color: white;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.carta{
+    width : 100%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 170px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #0275d8;
+    border-radius: 10px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropeable{
+    width: 100%;
+    background-color: #0275d8;
+    color: white;
+}
+.button{
+    width: 26px;
+    height: 26px;
+}
