@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+
+<div class="content" role="main">
+    <app-navbar></app-navbar>
+    
+    <app-searchbar></app-searchbar>
+
+    <app-handler (propagar)="actualizarVariableEnPadre($event)" ></app-handler>
+    <div *ngIf="valorCompartido" >
+        <div class="popup-container">
+            <div  class="popup-content">
+                <h2>Modal</h2>
+                <p>Info</p>
+                <button (click)="valorCompartido = false">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+<router-outlet></router-outlet>

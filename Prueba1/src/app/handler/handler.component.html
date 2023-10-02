@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2">
+        <div *ngFor="let game of games?.results">
+            <app-cards (propagar)="toggleComponent($event)" [game]="game" class="item"></app-cards>
+        </div>
+    </div>
+</div>

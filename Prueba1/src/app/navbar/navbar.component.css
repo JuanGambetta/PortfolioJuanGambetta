@@ -1,0 +1,68 @@
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the sidebar */
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 250px; /* Adjust the width as needed */
+    height: 100%;
+    background-color: #f0f0f0; /* Slight grey background color */
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2); /* Black margin on the right */
+    transition: transform 0.3s; /* Add smooth transition */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+/* Style for the sidebar links */
+.sidebar a {
+    padding: 16px;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+/* Style for the sidebar links on hover */
+.sidebar a:hover {
+    background-color: #ddd;
+}
+
+/* Button to open the sidebar */
+.open-button {
+    position: fixed;
+    top: 75px;
+    left: 10px;
+    padding: 10px 15px;
+    background-color: #6441a5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 7680px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .open-button {
+        display: none;
+    }
+    .desa {
+        display: none;
+    }
+}
+@media screen and (max-width: 425px) {
+    .sidebar {
+        width: 100px;
+    }
+    .open-button {
+        display: block;
+    }
+    .desa {
+        display: block;
+    }
+}
