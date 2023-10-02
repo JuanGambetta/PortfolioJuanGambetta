@@ -42,15 +42,8 @@ export class HandlerComponent implements OnInit, OnChanges {
         }
       });
     }
-
-    if (this.nuevosGames == undefined) {
     this.nuevosGames = this.games.results
-    console.log("1")
-    }
-    if (datosDelPadre == '' && this.nuevosGames.lenght > 0) {
-      this.games.results = this.nuevosGames
-    }else{
     this.games.results = juegosFiltrados
-    }
+    this.elevar.emit(juegosFiltrados)
   }
 }
