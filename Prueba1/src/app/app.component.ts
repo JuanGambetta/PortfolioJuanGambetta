@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   valorCompartido: boolean = true;
   juego: any = {};
+  buscarJuego: string = '';
   actualizarVariableEnPadre(nuevoValor: any) {
     if (nuevoValor !== undefined) {
       this.valorCompartido = true
@@ -17,6 +18,9 @@ export class AppComponent {
       this.valorCompartido = false
     }
     this.juego = nuevoValor
+  }
+  buscarjuego(textoInput: any) {
+    this.buscarJuego = textoInput;
   }
 
   constructor(private sharedDataService: SharedDataService) {

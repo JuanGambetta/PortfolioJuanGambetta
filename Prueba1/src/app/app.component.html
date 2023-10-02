@@ -4,9 +4,9 @@
 <div class="content" role="main">
     <app-navbar></app-navbar>
     
-    <app-searchbar></app-searchbar>
+    <app-searchbar (buscar)="buscarjuego($event)" ></app-searchbar>
 
-    <app-handler (propagar)="actualizarVariableEnPadre($event)" ></app-handler>
+    <app-handler (propagar)="actualizarVariableEnPadre($event)" [datosDelPadre]="buscarJuego" ></app-handler>
     <div *ngIf="valorCompartido" >
         <div class="popup-container">
             <div  class="popup-content">
