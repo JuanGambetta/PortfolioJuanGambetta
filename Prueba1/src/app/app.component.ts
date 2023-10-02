@@ -11,6 +11,7 @@ export class AppComponent {
   valorCompartido: boolean = true;
   juego: any = {};
   buscarJuego: string = '';
+  juegosFiltrados: any = []
   actualizarVariableEnPadre(nuevoValor: any) {
     if (nuevoValor !== undefined) {
       this.valorCompartido = true
@@ -18,6 +19,9 @@ export class AppComponent {
       this.valorCompartido = false
     }
     this.juego = nuevoValor
+  }
+  recargarJuegos(juegosFiltrados: any) {
+    this.juegosFiltrados = juegosFiltrados
   }
   buscarjuego(textoInput: any) {
     this.buscarJuego = textoInput;

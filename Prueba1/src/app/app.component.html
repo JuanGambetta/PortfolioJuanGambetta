@@ -6,7 +6,7 @@
     
     <app-searchbar (buscar)="buscarjuego($event)" ></app-searchbar>
 
-    <app-handler (propagar)="actualizarVariableEnPadre($event)" [datosDelPadre]="buscarJuego" ></app-handler>
+    <app-handler (elevar)="recargarJuegos($event)" (propagar)="actualizarVariableEnPadre($event)" [datosDelPadre]="buscarJuego" ></app-handler>
     <div *ngIf="valorCompartido" >
         <div class="popup-container">
             <div  class="popup-content">
