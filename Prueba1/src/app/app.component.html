@@ -10,8 +10,20 @@
     <div *ngIf="valorCompartido" >
         <div class="popup-container">
             <div  class="popup-content">
-                <h2>Modal</h2>
-                <p>Info</p>
+                <h1>{{juego.name}}</h1>
+                <p>Genero: <b>{{juego.genres[0].name}}</b><b>{{ juego.genres[1] ? ', ' + juego.genres[1].name : '' }}</b>
+                    <b>{{ juego.genres[2] ? ', ' + juego.genres[2].name : '' }}</b></p>
+                <p>Fecha de lanzamiento: {{juego.released}}</p>
+                <p>Horas de juego: {{juego.playtime}}</p>
+                <p>Plataformas: 
+                    {{juego.platforms[0].platform.name}}
+                    {{ juego.platforms[1] ? ', ' + juego.platforms[1].platform.name : '' }}
+                    {{ juego.platforms[2] ? ', ' + juego.platforms[2].platform.name : '' }}
+                    {{ juego.platforms[3] ? ', ' + juego.platforms[3].platform.name : '' }}
+                    {{ juego.platforms[4] ? ', ' + juego.platforms[4].platform.name : '' }}
+                    {{ juego.platforms[5] ? ', ' + juego.platforms[5].platform.name : '' }}
+                </p>
+                <p>Esrb rating: <b>{{juego.esrb_rating.name}}</b></p>
                 <button (click)="valorCompartido = false">Cerrar</button>
             </div>
         </div>

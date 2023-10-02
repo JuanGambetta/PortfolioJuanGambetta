@@ -12,7 +12,6 @@ export class GameInfoComponent implements OnInit {
     this.sharedDataService.getData().subscribe(data => {
       // Aquí puedes usar los datos recibidos del Componente B
       this.datosDeJuegos = data;
-      console.log("datosDeJuegos", this.datosDeJuegos)
     });
   }
   constructor(private sharedDataService: SharedDataService) { }

@@ -13,8 +13,7 @@ export class CardsComponent {
 
   bandera : boolean = true;
   toggleComponent() {
-    console.log("toggleComponent", this.bandera)
-    this.propagar.emit(this.bandera);
+    this.propagar.emit(this.game);
   }
   constructor(private sharedDataService: SharedDataService) { }
 }

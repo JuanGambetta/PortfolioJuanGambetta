@@ -19,8 +19,7 @@ export class HandlerComponent implements OnInit {
     });
   }
   @Output() propagar = new EventEmitter<any>()
-  toggleComponent(nuevoValor: boolean) {
-    console.log("llego al 2", nuevoValor)
-    this.propagar.emit([nuevoValor, this.currentGame]);
+  toggleComponent(nuevoValor: any) {
+    this.propagar.emit(nuevoValor);
   }
 }
