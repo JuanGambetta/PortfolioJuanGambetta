@@ -6,12 +6,9 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #6441a5;
+    background-color: #0275d8;
     color: white;
     font-weight: 600;
     z-index: 9998;
-  }
-
-  .header img {
-    margin: 0 16px;
+    align-content: center;
   }

@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DetalleJugadorComponent } from './detalle-Jugador/detalle-jugador.component';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
+import { DetalleJugadorComponent } from './detalle-jugador/detalle-jugador.component';
 import { AppComponent } from './app.component';
+import { PlantelComponent } from './plantel/plantel.component';
 
 const routes: Routes = [
   { path: '', component: TarjetaComponent },
-  { path: ':nombreJugador', component: DetalleJugadorComponent },
+  { path: 'plantel', component: PlantelComponent },
+  { path: ':nombre', component: DetalleJugadorComponent },
+  { path: '**', component: TarjetaComponent }
 ];
 
 @NgModule({
@@ -14,3 +17,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+

@@ -1,9 +1,10 @@
-
+<app-header></app-header>
 <div *ngFor="let prod of productos?.productos" class="card-container row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2">
     <div class="card"(click)="redirectToProductDetail(prod)" >
         <p class="producto-nombre">{{prod.nombre}}</p>
-        <p class="producto-precio">Precio: {{prod.precio}}</p>
+        <p class="producto-precio">Precio: {{prod.precio}}$</p>
         <p class="producto-cantidad">Cantidad en stock: {{prod.stock}}</p>
         <img class="producto-img" src="{{prod.imagen}}" alt="producto image">
     </div>
 </div>
+<app-footer></app-footer>

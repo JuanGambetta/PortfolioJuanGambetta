@@ -1,0 +1,16 @@
+<div class="card-container row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2">
+    <div *ngFor="let play of listaJugadores.jugadores" class="card"(click)="redirectToPlayerDetail(play)" >
+        <p class="jugador-nombre">{{play.nombre}}</p>
+        <p class="jugador-posicion">Posicion: {{play.posicion}}</p>
+        <img src="{{play.imagen}}" class="card-img-top">
+    </div>
+    <div >
+        <p>Ingresa un nombre:</p>
+        <input id="nombre" [value]="textoNombre" type="text" class="form-control rounded"/>
+        <p>Ingresa su posicion:</p>
+        <input id="posicion" [value]="textoPosicion" type="text" class="form-control rounded"/>
+        <p>Ingresa la foto:</p>
+        <input id="imagen" [value]="textoImagen" type="text" class="form-control rounded"/>
+        <button (click)="agregarJugador()" >Agregar</button>
+    </div>
+</div>
